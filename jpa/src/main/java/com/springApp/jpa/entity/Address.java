@@ -1,5 +1,6 @@
 package com.springApp.jpa.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,7 +14,7 @@ import lombok.NoArgsConstructor;
 public class Address {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String city;
     private String street;
@@ -21,5 +22,6 @@ public class Address {
     private Integer numberOfStreet;
 
     @OneToOne(mappedBy = "address")
+    @JsonBackReference
     private User user;
 }
