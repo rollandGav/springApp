@@ -17,8 +17,6 @@ import java.util.Optional;
 public class UserService {
 
     @Autowired
-    UserRepository repository;
-    @Autowired
     UserJpaRepository jpaRepository;
     @Autowired
     private ObjectMapper mapper;
@@ -26,15 +24,15 @@ public class UserService {
     EmailService emailService;
 
     public Iterable<User> saveAll(List<User> users) {
-        return repository.saveAll(users);
+        return jpaRepository.saveAll(users);
     }
 
     public Iterable<User> findAllUsers() {
-        return repository.findAll();
+        return jpaRepository.findAll();
     }
 
     public void deleteUser(Long id) {
-        repository.deleteById(id);
+        jpaRepository.deleteById(id);
     }
 
     public Optional<User> findUserByUsername(String username) {
