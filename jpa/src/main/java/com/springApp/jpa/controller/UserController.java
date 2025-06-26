@@ -3,7 +3,7 @@ package com.springApp.jpa.controller;
 import com.springApp.jpa.dto.UserDto;
 import com.springApp.jpa.entity.User;
 import com.springApp.jpa.exception.UserServiceException;
-import com.springApp.jpa.service.UserService;
+import com.springApp.jpa.impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,7 +18,7 @@ import java.util.Optional;
 public class UserController {
 
     @Autowired
-    UserService service;
+    UserServiceImpl service;
 
     @PostMapping("/all")
     public ResponseEntity<Iterable<User>> createUsers(@RequestBody List<User> users) {

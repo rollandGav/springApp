@@ -5,9 +5,9 @@ import com.springApp.jpa.dto.UserDto;
 import com.springApp.jpa.entity.User;
 import com.springApp.jpa.exception.EmailSendingException;
 import com.springApp.jpa.exception.UserServiceException;
+import com.springApp.jpa.impl.UserServiceImpl;
 import com.springApp.jpa.repository.UserJpaRepository;
 import com.springApp.jpa.service.EmailService;
-import com.springApp.jpa.service.UserService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -36,7 +36,7 @@ public class UserServiceTest {
     private EmailService emailService;
 
     @InjectMocks
-    private UserService userService;
+    private UserServiceImpl userService;
 
     private User testUser;
     private UserDto testUserDto;
